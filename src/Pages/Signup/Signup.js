@@ -2,21 +2,24 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../Contexts/Authprovider';
 
 const Signup = () => {
-    const {signUp} = useContext(AuthContext)
+    const {signUp,profileUpdate} = useContext(AuthContext)
 
 
     const handleSubmit = event=>{
       event.preventDefault();
       const form = event.target;
+      const name = form.name.value;
+      const photoURL = form.photoURL.value;
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email,password);
+      console.log(name, photoURL, email, password);
   
       signUp(email,password)
       .then((result) => {
        
       const user = result.user;
       console.log(user);
+      profileUpdate(name, photoURL);
        
       })
       .catch((error) => {
@@ -39,15 +42,27 @@ const Signup = () => {
              >
               <div className="form-control">
                 <label className="label">
+                  <span className="label-text">Your Name</span>
+                </label>
+                <input type="text" name="name" placeholder="Enter Your name" className="input input-bordered" />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">PhotoUrl</span>
+                </label>
+                <input type="text" name="photoURL" placeholder="Your PhotoUrl" className="input input-bordered" />
+              </div>
+              <div className="form-control">
+                <label className="label">
                   <span className="label-text">Email</span>
                 </label>
-                <input type="text" name="email" placeholder="email" className="input input-bordered" />
+                <input type="email" name="email" placeholder="email" className="input input-bordered" />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="text" name="password" placeholder="password" className="input input-bordered" />
+                <input type="password" name="password" placeholder="password" className="input input-bordered" />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>

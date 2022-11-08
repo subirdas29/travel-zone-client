@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Authprovider';
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
     const {user,logOut} = useContext(AuthContext)
@@ -54,7 +55,24 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-        <button className="btn btn-outline btn-warning" >Appointment</button>
+        <>
+                                {
+                                    user?.uid &&
+                                            <span>{user?.displayName}</span>
+
+                                }
+                                 {
+                                    user?.photoURL ?
+                                        
+                                    <div className="avatar">
+                                    <div className="w-12 mx-5 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                      <img src={user?.photoURL} alt=""/>
+                                    </div>
+                                  </div>
+                                        :
+                                        <FaUser></FaUser>
+                                }
+                            </>
         </div>
       </div>
     );
