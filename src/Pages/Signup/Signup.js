@@ -1,8 +1,11 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../Contexts/Authprovider';
 
 const Signup = () => {
-    const {signUp,profileUpdate} = useContext(AuthContext)
+    const {signUp,profileUpdate,googleSignUp} = useContext(AuthContext)
+    const provider = new GoogleAuthProvider();
 
 
     const handleSubmit = event=>{
@@ -26,6 +29,24 @@ const Signup = () => {
        console.error(error,'error')
       });
     }
+
+    const googleHandleSubmit =()=>
+   {
+    googleSignUp(provider)
+    .then((result) => {
+       
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        console.log(user)
+    
+       
+      }).catch((error) => {
+        
+        console.error(error)
+        
+      });
+   }
     return (
         <div className="hero my-20">
         <div className="hero-content grid md:grid-cols-2 gap-10 flex-col lg:flex-row">
@@ -71,6 +92,8 @@ const Signup = () => {
                 <button className="btn btn-primary">SignUp</button>
               </div>
             </form>
+            <button onClick={googleHandleSubmit} className="btn  btn-outline hover:bg-[#6440FB] mx-8 mb-8">
+                        <FaGoogle  className='mr-3 text-xl'></FaGoogle> <p>Google</p> </button>
           </div>
         </div>
       </div>
