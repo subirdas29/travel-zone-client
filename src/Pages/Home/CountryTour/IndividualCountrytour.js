@@ -1,5 +1,6 @@
 
 import { useLoaderData } from 'react-router-dom';
+import ReviewSection from './ReviewSection/ReviewSection';
 
 const IndividualCountrytour = () => {
 
@@ -8,7 +9,8 @@ const IndividualCountrytour = () => {
    
     
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div>
+          <div className="hero my-20 bg-base-200">
   <div className="hero-content flex-col lg:flex-row">
     <img src={img} className="max-w-sm rounded-lg shadow-2xl" />
     <div>
@@ -18,6 +20,12 @@ const IndividualCountrytour = () => {
     </div>
   </div>
 </div>
+
+<div>
+  <ReviewSection></ReviewSection>
+</div>
+
+        </div>
     );
 };
 
