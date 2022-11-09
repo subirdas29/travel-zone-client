@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import CountryTourCard from './CountryTourCard';
 
 const CountryTour = () => {
     
     const [services,setServices] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/countries')
+        fetch('https://travel-zone-server-chi.vercel.app/countries')
         .then(res =>res.json())
         .then(data=>setServices(data))
     },[])
@@ -20,8 +21,8 @@ const CountryTour = () => {
                 service={service}></CountryTourCard>)
             }
         </div>
-        <div >
-        <button className='bg-black text-white rounded-lg px-6 py-3 ml-96 mb-5'>See All</button>
+        <div className='flex justify-center'>
+        <button  className='bg-black text-white rounded-lg px-6 py-3 mb-5'><Link to="/services">See All</Link></button>
         </div>
         </div>
     );

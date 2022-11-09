@@ -4,7 +4,7 @@ import CountryTourCard from './CountryTourCard';
 
 const AllCountryTour = () => {
     const services= useLoaderData()
-    console.log(services)
+    
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 m-20'>
             {
