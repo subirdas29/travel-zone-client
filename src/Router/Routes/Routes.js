@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import AllCountryTour from "../../Pages/Home/CountryTour/AllCountryTour";
 import IndividualCountrytour from "../../Pages/Home/CountryTour/IndividualCountrytour";
+import ReviewSection from "../../Pages/Home/CountryTour/ReviewSection/ReviewSection";
 
 
 
@@ -26,6 +27,12 @@ const router = createBrowserRouter([
       {
         path:"/services/allcountries/:id",
         element:<IndividualCountrytour></IndividualCountrytour>,
+        loader:({params})=>fetch(`http://localhost:5000/services/allcountries/${params.id}`)
+      },
+
+      {
+        path:"/services/allcountries/:id",
+        element:<ReviewSection></ReviewSection>,
         loader:({params})=>fetch(`http://localhost:5000/services/allcountries/${params.id}`)
       },
 

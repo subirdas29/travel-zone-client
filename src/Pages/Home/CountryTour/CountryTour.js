@@ -22,7 +22,7 @@ const CountryTour = () => {
             }
         </div>
         <div className='flex justify-center'>
-        <button  className='bg-black text-white rounded-lg px-6 py-3 mb-5'><Link to="/services">See All</Link></button>
+        <Link to="/services"><button  className='bg-black text-white rounded-lg px-6 py-3 mb-5'>See All</button></Link>
         </div>
         </div>
     );
