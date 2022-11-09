@@ -8,6 +8,7 @@ import ReviewSection from "../../Pages/Home/CountryTour/ReviewSection/ReviewSect
 
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import MyReviews from "../../Pages/MyReviews/MyReviews";
 import Signup from "../../Pages/Signup/Signup";
 
 
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         path:"/services/allcountries/:id",
         element:<ReviewSection></ReviewSection>,
         loader:({params})=>fetch(`http://localhost:5000/services/allcountries/${params.id}`)
+      },
+
+      {
+        path:'/myreviews',
+        element:<MyReviews></MyReviews>
       },
 
       {

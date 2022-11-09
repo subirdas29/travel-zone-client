@@ -1,6 +1,7 @@
-import React, { useContext} from 'react';
+import React, { useContext, useEffect, useState} from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../../Contexts/Authprovider';
+import AllReviews from './AllReviews';
 
 
 const ReviewSection = () => {
@@ -50,10 +51,18 @@ const ReviewSection = () => {
             console.error('Error:', error);
           });
         }
+            }
 
-        
-        
-    }
+          
+    
+
+            const [allReviews, setAllReviews] = useState([])
+
+            useEffect(() => {
+                fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+                    .then(res => res.json())
+                    .then(data => setAllReviews(data))
+            }, [user?.email])
 
     return (
         <div className='mx-14 mb-20'>
@@ -67,8 +76,17 @@ const ReviewSection = () => {
             </div>
             </form> : 
             <p>Before Giving your review, Please Logged in</p>
-
         }
+        <div>
+
+        {
+            allReviews.map(allReview =>  <AllReviews key={allReview._id}
+            allReview={allReview}></AllReviews>)
+        }
+
+
+           
+        </div>
        </div>
         
     </div>
