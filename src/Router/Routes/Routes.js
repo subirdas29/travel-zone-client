@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
-import AllServices from "../../Pages/Home/CountryTour/AllServices";
+import AllCountryTour from "../../Pages/Home/CountryTour/AllCountryTour";
 
-import CountryTourCard from "../../Pages/Home/CountryTour/CountryTourCard";
+
+
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Signup from "../../Pages/Signup/Signup";
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
       },
       {
         path:"/services",
-        element:<AllServices></AllServices>
+        element:<AllCountryTour></AllCountryTour>,
+        loader:()=>fetch('http://localhost:5000/allcountries')
       },
       {
         path:"/login",

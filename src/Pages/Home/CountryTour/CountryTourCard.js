@@ -2,10 +2,11 @@ import React from 'react';
 
 const CountryTourCard = ({service}) => {
     const {title,img,price,description} = service;
-    console.log(service)
+
+    
     return (
         <div className="card w-auto bg-base-100 shadow-xl">
-  <figure><img className='h-64 w-96' src={img} alt="Shoes" /></figure>
+  <figure><img className='h-64 w-full' src={img} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
       {title}

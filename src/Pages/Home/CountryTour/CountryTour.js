@@ -21,7 +21,7 @@ const CountryTour = () => {
             }
         </div>
         <div >
-        <button className='bg-black text-white rounded-lg px-6 py-3 ml-96 mb-5'>Show all</button>
+        <button className='bg-black text-white rounded-lg px-6 py-3 ml-96 mb-5'>See All</button>
         </div>
         </div>
     );
