@@ -1,5 +1,6 @@
 
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
 import ReviewSection from './ReviewSection/ReviewSection';
 
 const IndividualCountrytour = () => {
@@ -7,7 +8,7 @@ const IndividualCountrytour = () => {
     const countrydetails = useLoaderData()
     const {img,title,description,price} = countrydetails
    
-    
+    useTitle('IndividualCountriesTour')
     return (
         <div>
           <div className="hero my-20 bg-base-200">

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const MyAllReviews = ({allReview,handleDelete}) => {
+  useTitle('MyReviews')
     const {img,customer,service_name,email,text,_id} =allReview
     return (
         <div className="hero  bg-base-200">

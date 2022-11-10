@@ -2,12 +2,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCjoOj4M--LmgpfVIdudCg8sWVSqcb5qe4",
-  authDomain: "travel-zone-fbd7e.firebaseapp.com",
-  projectId: "travel-zone-fbd7e",
-  storageBucket: "travel-zone-fbd7e.appspot.com",
-  messagingSenderId: "40016254040",
-  appId: "1:40016254040:web:5f7731c72c6115ec35662d"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 

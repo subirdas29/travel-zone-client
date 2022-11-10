@@ -2,11 +2,12 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../Contexts/Authprovider';
+import useTitle from '../../Hooks/useTitle';
 
 const Signup = () => {
     const {signUp,profileUpdate,googleSignUp} = useContext(AuthContext)
     const provider = new GoogleAuthProvider();
-
+    useTitle('SignUp')
 
     const handleSubmit = event=>{
       event.preventDefault();
