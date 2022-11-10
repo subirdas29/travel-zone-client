@@ -23,7 +23,7 @@ const ReviewEdit = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount>0) {
-                    alert('Updated')
+                 alert('updated')
                 }
                 console.log(data)
             })

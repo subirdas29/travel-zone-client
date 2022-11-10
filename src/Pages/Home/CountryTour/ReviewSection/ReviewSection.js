@@ -82,8 +82,17 @@ const ReviewSection = () => {
         <div>
 
         {
-            allReviews.map(allReview =>  <AllReviews key={allReview._id}
-            allReview={allReview}></AllReviews>)
+            allReviews?.text?
+            <>
+            <p>No Reviews Yet</p>
+           </>:
+            <>
+            {
+                allReviews.map(allReview =>  <AllReviews key={allReview._id}
+                    allReview={allReview}></AllReviews>)
+            }
+            </>
+              
         }
 
 
