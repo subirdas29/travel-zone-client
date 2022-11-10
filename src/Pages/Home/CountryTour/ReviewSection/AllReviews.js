@@ -8,9 +8,9 @@ const AllReviews = ({allReview}) => {
 <div className='my-4 ' >
 
 
-<tr className='border-2 border-amber-200 '>
+<div className=' p-5 border-2 border-amber-200 '>
 
-<td>
+
   <div className="flex items-center space-x-3 ">
     <div className="avatar">
       <div className="mask mask-squircle w-12 h-12">
@@ -22,14 +22,12 @@ const AllReviews = ({allReview}) => {
       <div className="text-sm opacity-50">{service_name}</div>
     </div>
   </div>
-</td>
-<td>
+
+
   {text}
   <br/>
   
-</td>
-
-</tr>
+</div>
 
 </div>
 

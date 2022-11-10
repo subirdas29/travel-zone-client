@@ -84,27 +84,22 @@ const ReviewSection = () => {
         <div>
 
         {
-            allReviews?.text?
-            <>
-            <p>No Reviews Yet</p>
-           </>:
+            
            <div>
            <h2 className='text-center text-4xl font-bold my-10'>All Reviews: {allReviews.length} </h2>
-           <div className="overflow-x-auto w-full">
-               <table className="table w-full">
+           {/* <div className="overflow-x-auto w-full">
+               <table className="table w-full"> */}
 
-             <thead>
-            
-           </thead>
-<tbody>
+             
+{/* <tbody> */}
             {
                 allReviews.map(allReview =>  <AllReviews key={allReview._id}
                     allReview={allReview}></AllReviews>)
             }
-            </tbody>
+            {/* </tbody>
             
             </table>
-        </div>
+        </div> */}
         </div>
         
         }

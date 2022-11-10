@@ -46,6 +46,7 @@ const Header = () => {
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               {menuItems}
               <li className='font-semibold'> <Link to="/blogs">Blogs </Link> </li>
+              <li className='font-semibold'> <Link to="/services">Tourist Places </Link> </li>
               
             </ul>
           </div>
@@ -58,6 +59,7 @@ const Header = () => {
           <ul className="menu menu-horizontal p-0">
           {menuItems}
           <li className='font-semibold'> <Link to="/blogs">Blogs </Link> </li>
+          <li className='font-semibold'> <Link to="/services">Tourist Places </Link> </li>
           
           </ul>
         </div>
