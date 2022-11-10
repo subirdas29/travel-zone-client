@@ -7,6 +7,7 @@ import AllReviews from './AllReviews';
 const ReviewSection = () => {
 
     const {user}= useContext(AuthContext)
+    const [refresh,setRefresh]= useState(false)
     const allServices = useLoaderData()
     const {_id,title} = allServices;
    
@@ -43,7 +44,7 @@ const ReviewSection = () => {
         .then(data =>{
             if(data.acknowledged)
             {
-                
+                setRefresh(true)
                 alert('Your review is added')
                 textarea.reset();
             }
@@ -61,7 +62,7 @@ const ReviewSection = () => {
                 fetch(`http://localhost:5000/reviews/${_id}`)
                     .then(res => res.json())
                     .then(data => setAllReviews(data))
-            }, [_id])
+            }, [refresh,_id])
             
              
 

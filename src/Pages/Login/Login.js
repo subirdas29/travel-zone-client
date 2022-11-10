@@ -6,7 +6,7 @@ import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../Contexts/Authprovider';
 
 const Login = () => {
-    const {login,googleSignUp} = useContext(AuthContext)
+    const {login,googleSignUp,loading,user} = useContext(AuthContext)
     const provider = new GoogleAuthProvider();
     let location = useLocation();
   let navigate = useNavigate();
@@ -25,13 +25,20 @@ const Login = () => {
        
         const user = result.user;
         console.log(user);
-       
+        
         navigate(from, { replace: true });
       })
       .catch((error) => {
        console.error(error,'error')
       });
+
+      if(loading)
+    {
+        <progress className="progress w-56"></progress>
+        console.log('dfjffj')
+    }
       }
+
       const googleHandleSubmit =()=>
    {
     googleSignUp(provider)

@@ -38,9 +38,9 @@ const router = createBrowserRouter([
         loader:({params})=>fetch(`http://localhost:5000/services/allcountries/${params.id}`)
       },
       {
-        path:"/reviewedit/:id",
-        element:ReviewEdit,
-        // loader:({params})=>fetch(`http://localhost:5000/services/allcountries/${params.id}`)
+        path:"/myreviews/:id",
+        element:<ReviewEdit></ReviewEdit>,
+        loader:({params})=>fetch(`http://localhost:5000/allreviews/${params.id}`)
       },
 
 

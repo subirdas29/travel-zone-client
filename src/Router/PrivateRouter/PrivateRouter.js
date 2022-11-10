@@ -8,7 +8,7 @@ const PrivateRouter = ({children}) => {
    
     if(loading)
     {
-        <div>Loading...</div>
+        <progress className="progress w-56"></progress>
     }
     if(user){
         return children;
