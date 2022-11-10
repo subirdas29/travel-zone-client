@@ -12,7 +12,7 @@ const MyAllReviews = ({allReview,handleDelete}) => {
 <tr>
 <th>
   <label>
-   <button onClick={()=>handleDelete(_id)} className='btn btn-outline btn-error'>X</button>
+   <button  onClick={()=>handleDelete(_id)} className='btn btn-outline btn-error' >X</button>
   </label>
 </th>
 <td>
@@ -35,7 +35,7 @@ const MyAllReviews = ({allReview,handleDelete}) => {
 </td>
 <td>{email}</td>
 <th>
-<Link to={`/myreviews/${_id}`}> <button onClick={notify} className="btn btn-outline btn-warning">Edit</button></Link>
+<Link to={`/myreviews/${_id}`}> <button  className="btn btn-outline btn-warning">Edit</button></Link>
 </th>
 </tr>
 
