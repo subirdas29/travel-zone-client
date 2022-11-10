@@ -12,6 +12,8 @@ const MyReviews = () => {
             .then(res => res.json())
             .then(data => setAllReviews(data))
     }, [user?.email])
+
+
     return (
         <div>
             {

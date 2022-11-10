@@ -21,9 +21,9 @@ const ReviewSection = () => {
 
 
         const reviews={
-            Service:_id,
-            Service_Name:title,
-            Customer: displayName,
+            service:_id,
+            service_name:title,
+            customer: displayName,
             img,
             email,
             text,
@@ -43,6 +43,7 @@ const ReviewSection = () => {
         .then(data =>{
             if(data.acknowledged)
             {
+                
                 alert('Your review is added')
                 textarea.reset();
             }
@@ -54,15 +55,15 @@ const ReviewSection = () => {
             }
 
           
-    
-
             const [allReviews, setAllReviews] = useState([])
 
             useEffect(() => {
-                fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+                fetch(`http://localhost:5000/reviews/${_id}`)
                     .then(res => res.json())
                     .then(data => setAllReviews(data))
-            }, [user?.email])
+            }, [_id])
+            
+             
 
     return (
         <div className='mx-14 mb-20'>
