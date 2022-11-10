@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Authprovider';
 import { FaUser } from 'react-icons/fa';
+import Blogs from '../../Blogs/Blogs';
 
 const Header = () => {
     const {user,logOut} = useContext(AuthContext)
@@ -43,6 +44,8 @@ const Header = () => {
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               {menuItems}
+              <li className='font-semibold'> <Link to="/blogs">Blogs </Link> </li>
+              
             </ul>
           </div>
           <Link to='/' className="btn btn-ghost normal-case text-2xl">
@@ -53,6 +56,8 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
           {menuItems}
+          <li className='font-semibold'> <Link to="/blogs">Blogs </Link> </li>
+          
           </ul>
         </div>
         <div className="navbar-end">
