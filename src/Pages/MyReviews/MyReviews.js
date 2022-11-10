@@ -36,12 +36,46 @@ const MyReviews = () => {
         }
     }
     return (
+
+
         <div>
-            {
-                allReviews.map(allReview =>  <MyAllReviews key={allReview._id} handleDelete={handleDelete}
-                    allReview={allReview}></MyAllReviews>)
-            }
+        <h2 className='text-center text-4xl font-bold my-10'>My Reviews: {allReviews.length} </h2>
+        <div className="overflow-x-auto w-full">
+            <table className="table w-full">
+
+            <thead>
+  <tr>
+  <th>
+      
+    </th>
+    
+    <th>Name</th>
+    <th>Review</th>
+    <th>Email</th>
+    <th>Update</th>
+    <th></th>
+  </tr>
+</thead>
+                <tbody>
+                   
+                
+                {
+                         allReviews.map(allReview =>  <MyAllReviews key={allReview._id} handleDelete={handleDelete}
+                                  allReview={allReview}></MyAllReviews>)
+                    }
+                
+                </tbody>
+            </table>
         </div>
+
+
+        
+    </div>
+
+
+
+
+    
     );
 };
 

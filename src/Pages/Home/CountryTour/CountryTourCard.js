@@ -11,7 +11,17 @@ const CountryTourCard = ({service}) => {
     <h2 className="card-title">
       {title}
     </h2>
-    <p>{description}</p>
+    <p>
+      
+      {
+        description.length > 150 ?
+        <>{description.slice(0, 150) + '...'} </>
+        :
+        description
+      }
+      
+      {}
+    </p>
     <div className="card-actions justify-between">
       <div className="badge badge-outline p-5 text-xl">{price}</div> 
       <div>

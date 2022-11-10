@@ -28,6 +28,8 @@ const ReviewSection = () => {
             img,
             email,
             text,
+            createdAt: new Date(),
+            updatedAt: new Date(),
         }
         console.log(reviews)
 
