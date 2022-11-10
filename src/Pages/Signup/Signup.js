@@ -59,8 +59,8 @@ const Signup = () => {
         <div className="hero-content grid md:grid-cols-2 gap-10 flex-col lg:flex-row">
           <div className="text-center lg:text-left">
             
-            <img className='w-3/4'
-            //  src={img}
+            <img className='w-full ml-10'
+            src="https://i.ibb.co/9bjwPdn/Mobile-login.jpg"
              alt=""/>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

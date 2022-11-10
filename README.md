@@ -14,7 +14,7 @@ https://travel-zone-fbd7e.web.app
 - There are secure authentication system by firebase. Google and Email this two system are added for secure authentication.
 - There are also many types blogs.. Which is helps to know about many things.
 - There are also a checkout page...Which is helps you to Get a premium member.
-- You give your review here
+- You can give your review here
 - You can also delete and edit your review.
 
 ## Feature
