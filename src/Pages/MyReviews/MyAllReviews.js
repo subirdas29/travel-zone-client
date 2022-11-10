@@ -31,7 +31,7 @@ const MyAllReviews = ({allReview,handleDelete}) => {
 <td>
   {text}
   <br/>
-  <span className="badge badge-ghost badge-sm"></span>
+  
 </td>
 <td>{email}</td>
 <th>
