@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+
 import  { AuthContext } from '../../Contexts/Authprovider';
 import MyAllReviews from './MyAllReviews';
 
@@ -6,6 +7,7 @@ const MyReviews = () => {
 
     const {user} =useContext(AuthContext)
     const [allReviews, setAllReviews] = useState([])
+   
 
 
     useEffect(() => {
@@ -29,7 +31,7 @@ const MyReviews = () => {
                        
                         const filter = allReviews.filter(review => review._id !== _id)
                         setAllReviews(filter)
-                        alert('your order is deleted')
+                        // alert('your order is deleted')
                         
                     }
                 })

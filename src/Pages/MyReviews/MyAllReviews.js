@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import useTitle from '../../Hooks/useTitle';
 
 const MyAllReviews = ({allReview,handleDelete}) => {
   useTitle('MyReviews')
+  const notify = () => toast("Your Review deleted!");
     const {img,customer,service_name,email,text,_id} =allReview
     return (
 
@@ -33,7 +35,7 @@ const MyAllReviews = ({allReview,handleDelete}) => {
 </td>
 <td>{email}</td>
 <th>
-<Link to={`/myreviews/${_id}`}> <button className="btn btn-outline btn-warning">Edit</button></Link>
+<Link to={`/myreviews/${_id}`}> <button onClick={notify} className="btn btn-outline btn-warning">Edit</button></Link>
 </th>
 </tr>
 
