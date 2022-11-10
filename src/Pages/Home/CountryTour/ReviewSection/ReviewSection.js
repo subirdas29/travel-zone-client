@@ -35,7 +35,7 @@ const ReviewSection = () => {
 
         if(user?.email)
         {
-            fetch('http://localhost:5000/reviews',{
+            fetch('https://travel-zone-fbd7e.web.app/reviews',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -61,7 +61,7 @@ const ReviewSection = () => {
             const [allReviews, setAllReviews] = useState([])
 
             useEffect(() => {
-                fetch(`http://localhost:5000/reviews/${_id}`)
+                fetch(`https://travel-zone-fbd7e.web.app/reviews/${_id}`)
                     .then(res => res.json())
                     .then(data => setAllReviews(data))
             }, [refresh,_id])

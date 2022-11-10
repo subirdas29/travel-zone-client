@@ -11,7 +11,7 @@ const MyReviews = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://travel-zone-fbd7e.web.app/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setAllReviews(data))
     }, [user?.email])
@@ -21,7 +21,7 @@ const MyReviews = () => {
         const procced= window.confirm('Are you sure you want to delete')
         if(procced)
         {
-            fetch(`http://localhost:5000/reviews/${_id}`,{
+            fetch(`https://travel-zone-fbd7e.web.app/reviews/${_id}`,{
                 method:'DELETE',
             })
             .then(res=>res.json())

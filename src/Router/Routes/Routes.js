@@ -27,23 +27,23 @@ const router = createBrowserRouter([
       {
         path:"/services",
         element:<AllCountryTour></AllCountryTour>,
-        loader:()=>fetch('http://localhost:5000/allcountries')
+        loader:()=>fetch('https://travel-zone-fbd7e.web.app/allcountries')
       },
       {
         path:"/services/allcountries/:id",
         element:<IndividualCountrytour></IndividualCountrytour>,
-        loader:({params})=>fetch(`http://localhost:5000/services/allcountries/${params.id}`)
+        loader:({params})=>fetch(`https://travel-zone-fbd7e.web.app/services/allcountries/${params.id}`)
       },
 
       {
         path:"/services/allcountries/:id",
         element:<ReviewSection></ReviewSection>,
-        loader:({params})=>fetch(`http://localhost:5000/services/allcountries/${params.id}`)
+        loader:({params})=>fetch(`https://travel-zone-fbd7e.web.app/services/allcountries/${params.id}`)
       },
       {
         path:"/myreviews/:id",
         element:<ReviewEdit></ReviewEdit>,
-        loader:({params})=>fetch(`http://localhost:5000/allreviews/${params.id}`)
+        loader:({params})=>fetch(`https://travel-zone-fbd7e.web.app/allreviews/${params.id}`)
       },
 
 
