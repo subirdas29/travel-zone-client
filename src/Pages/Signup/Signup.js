@@ -1,6 +1,7 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FaGoogle } from "react-icons/fa";
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/Authprovider';
 import useTitle from '../../Hooks/useTitle';
 
@@ -8,6 +9,9 @@ const Signup = () => {
     const {signUp,profileUpdate,googleSignUp} = useContext(AuthContext)
     const provider = new GoogleAuthProvider();
     useTitle('SignUp')
+    let location = useLocation();
+    let navigate = useNavigate();
+    let from = location.state?.from?.pathname || "/";
 
     const handleSubmit = event=>{
       event.preventDefault();
@@ -24,6 +28,7 @@ const Signup = () => {
       const user = result.user;
       console.log(user);
       profileUpdate(name, photoURL);
+      navigate(from, { replace: true });
        
       })
       .catch((error) => {
@@ -40,6 +45,7 @@ const Signup = () => {
         const token = credential.accessToken;
         const user = result.user;
         console.log(user)
+        navigate(from, { replace: true });
     
        
       }).catch((error) => {
