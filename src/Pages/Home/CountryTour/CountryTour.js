@@ -13,8 +13,8 @@ const CountryTour = () => {
     },[])
     return (
         <div className='m-20'>
-            <p className='text-center text-xl'>Choose your place</p>
-            <h2 className='text-center text-5xl font-bold'>Popular Tours</h2>
+            <p className='text-center text-xl text-[#31889c]'>Choose your place</p>
+            <h2 className='text-center text-5xl font-bold text-[#0F2454]'>Popular Tours</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10'>
             {
                 services.map(service =><CountryTourCard key={service._id}

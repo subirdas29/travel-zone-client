@@ -8,22 +8,15 @@ const CountryTourCard = ({service}) => {
     
     return (
 
-
       <div>
 
-
-
         <div className="card w-auto bg-base-100 shadow-xl">
-  <figure>
-    
+  <figure> 
   <PhotoProvider>
       <PhotoView src={img}>
       <img className='h-64 w-full' src={img} alt="" />
       </PhotoView>
-    </PhotoProvider>
-
-   
-    
+    </PhotoProvider>  
     
     </figure>
   <div className="card-body">

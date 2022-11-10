@@ -11,7 +11,8 @@ const IndividualCountrytour = () => {
     useTitle('IndividualCountriesTour')
     return (
         <div>
-          <div className="hero my-20 bg-base-200">
+          
+          <div className="hero my-20 bg-amber-100">
   <div className="hero-content flex-col lg:flex-row">
     <img src={img} className="max-w-sm rounded-lg shadow-2xl" />
     <div>
