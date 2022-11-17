@@ -35,7 +35,7 @@ const ReviewSection = () => {
 
         if(user?.email)
         {
-            fetch('https://travel-zone-fbd7e.web.app/reviews',{
+            fetch('https://travel-zone-server-subirdas29.vercel.app/reviews',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -61,7 +61,7 @@ const ReviewSection = () => {
             const [allReviews, setAllReviews] = useState([])
 
             useEffect(() => {
-                fetch(`https://travel-zone-fbd7e.web.app/reviews/${_id}`)
+                fetch(`https://travel-zone-server-subirdas29.vercel.app/reviews/${_id}`)
                     .then(res => res.json())
                     .then(data => setAllReviews(data))
             }, [refresh,_id])

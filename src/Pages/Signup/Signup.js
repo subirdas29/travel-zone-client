@@ -4,9 +4,10 @@ import { FaGoogle } from "react-icons/fa";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/Authprovider';
 import useTitle from '../../Hooks/useTitle';
+import { CircleLoader } from 'react-spinners';
 
 const Signup = () => {
-    const {signUp,profileUpdate,googleSignUp} = useContext(AuthContext)
+    const {signUp,profileUpdate,googleSignUp,loading} = useContext(AuthContext)
     const provider = new GoogleAuthProvider();
     useTitle('SignUp')
     let location = useLocation();
@@ -44,6 +45,8 @@ const Signup = () => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
+      
+
         console.log(user)
         navigate(from, { replace: true });
     
@@ -55,7 +58,20 @@ const Signup = () => {
       });
    }
     return (
-        <div className="hero my-20">
+        <div>
+          {
+            loading ? 
+            <div className='flex justify-center'>
+            <CircleLoader
+        color={'#E5FF00'}
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"/>
+           </div>
+            :
+
+            <div className="hero my-20">
         <div className="hero-content grid md:grid-cols-2 gap-10 flex-col lg:flex-row">
           <div className="text-center lg:text-left">
             
@@ -104,6 +120,9 @@ const Signup = () => {
           </div>
         </div>
       </div>
+
+          }
+        </div>
     );
 };
 

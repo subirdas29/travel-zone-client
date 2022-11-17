@@ -7,7 +7,7 @@ const CountryTour = () => {
     
     const [services,setServices] = useState([])
     useEffect(()=>{
-        fetch('https://travel-zone-server-chi.vercel.app/countries')
+        fetch('https://travel-zone-server-subirdas29.vercel.app/countries')
         .then(res =>res.json())
         .then(data=>setServices(data))
     },[])

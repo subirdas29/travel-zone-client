@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
+import { CircleLoader } from 'react-spinners';
 
 import { AuthContext } from '../../Contexts/Authprovider';
 import useTitle from '../../Hooks/useTitle';
@@ -61,41 +62,56 @@ const Login = () => {
    }
   
       return (
-          <div className="hero my-20">
-    <div className="hero-content grid md:grid-cols-2 gap-10 flex-col lg:flex-row">
-      <div className="text-center lg:text-left">
-        
-        <img className='w-full mx-10' 
-        src='https://i.ibb.co/L5TMyDf/5098293.jpg'
-         alt=""/>
-      </div>
-      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <h1 className="text-5xl text-center font-bold">Login</h1>
-        <form className="card-body" onSubmit={handleSubmit}>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input type="email" name='email' placeholder="email" className="input input-bordered" />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Password</span>
-            </label>
-            <input type="password" name='password' placeholder="password" className="input iring-offset-2nput-bordered" />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-            </label>
-          </div>
-          <div className="form-control mt-6">
-            <button className="btn btn-primary">Login</button>
-          </div>
-        </form>
-        <button onClick={googleHandleSubmit} className="btn  btn-outline hover:bg-[#6440FB] mx-8 mb-8">
-                        <FaGoogle  className='mr-3 text-xl'></FaGoogle> <p>Google</p> </button>
-      </div>
-    </div>
+          <div>
+            {
+               loading ? 
+               <div className='flex justify-center'>
+                <CircleLoader
+            color={'#E5FF00'}
+            loading={loading}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"/>
+               </div>
+                :
+
+<div className="hero my-20">
+<div className="hero-content grid md:grid-cols-2 gap-10 flex-col lg:flex-row">
+  <div className="text-center lg:text-left">
+    
+    <img className='w-full mx-10' 
+    src='https://i.ibb.co/L5TMyDf/5098293.jpg'
+     alt=""/>
   </div>
+  <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+  <h1 className="text-5xl text-center font-bold">Login</h1>
+    <form className="card-body" onSubmit={handleSubmit}>
+      <div className="form-control">
+        <label className="label">
+          <span className="label-text">Email</span>
+        </label>
+        <input type="email" name='email' placeholder="email" className="input input-bordered" />
+      </div>
+      <div className="form-control">
+        <label className="label">
+          <span className="label-text">Password</span>
+        </label>
+        <input type="password" name='password' placeholder="password" className="input iring-offset-2nput-bordered" />
+        <label className="label">
+          <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+        </label>
+      </div>
+      <div className="form-control mt-6">
+        <button className="btn btn-primary">Login</button>
+      </div>
+    </form>
+    <button onClick={googleHandleSubmit} className="btn  btn-outline hover:bg-[#6440FB] mx-8 mb-8">
+                    <FaGoogle  className='mr-3 text-xl'></FaGoogle> <p>Google</p> </button>
+  </div>
+</div>
+</div>
+            }
+          </div>
       );
 };
 

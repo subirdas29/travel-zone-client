@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import  { AuthContext } from '../../Contexts/Authprovider';
 import MyAllReviews from './MyAllReviews';
@@ -11,9 +13,14 @@ const MyReviews = () => {
 
 
     useEffect(() => {
-        fetch(`https://travel-zone-fbd7e.web.app/reviews?email=${user?.email}`)
+        fetch(`https://travel-zone-server-subirdas29.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
-            .then(data => setAllReviews(data))
+            .then(data => 
+                {
+                    setAllReviews(data)
+                console.log(data)}
+                
+                )
     }, [user?.email])
 
 
@@ -21,7 +28,7 @@ const MyReviews = () => {
         const procced= window.confirm('Are you sure you want to delete')
         if(procced)
         {
-            fetch(`https://travel-zone-fbd7e.web.app/reviews/${_id}`,{
+            fetch(`https://travel-zone-server-subirdas29.vercel.app/reviews/${_id}`,{
                 method:'DELETE',
             })
             .then(res=>res.json())
@@ -30,8 +37,9 @@ const MyReviews = () => {
                     if(data.deletedCount > 0){
                        
                         const filter = allReviews.filter(review => review._id !== _id)
-                        setAllReviews(filter)
-                        // alert('your order is deleted')
+                        setAllReviews(filter);
+                        toast('deleted');
+                        
                         
                     }
                 })

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+
 import useTitle from '../../Hooks/useTitle';
 
 const MyAllReviews = ({allReview,handleDelete}) => {
   useTitle('MyReviews')
-  const notify = () => toast("Your Review deleted!");
+  
     const {img,customer,service_name,email,text,_id} =allReview
     return (
 

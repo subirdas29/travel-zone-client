@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import { CircleLoader } from 'react-spinners';
 import { AuthContext } from '../../Contexts/Authprovider';
 
 
@@ -9,7 +10,14 @@ const PrivateRouter = ({children}) => {
    
     if(loading)
     {
-        <progress className="progress w-56"></progress>
+        return <div className='flex justify-center'>
+        <CircleLoader
+        color={'#E5FF00'}
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"/>
+        </div>
     }
     if(user){
         return children;

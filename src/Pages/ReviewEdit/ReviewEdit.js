@@ -14,7 +14,7 @@ const ReviewEdit = () => {
         const text = textarea.text.value;
 
 
-        fetch(`https://travel-zone-fbd7e.web.app/allreviews/${editReview._id}`, {
+        fetch(`https://travel-zone-server-subirdas29.vercel.app/allreviews/${editReview._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
