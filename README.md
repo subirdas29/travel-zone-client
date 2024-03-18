@@ -10,10 +10,10 @@ https://travel-zone-fbd7e.web.app
 ## Description
 
 - My website is a Travel Agency website
-- Six Tourist Country are added... I will added many Beautiful Countries in the website
-- There are secure authentication system by firebase. Google and Email this two system are added for secure authentication.
-- There are also many types blogs.. Which is helps to know about many things.
-- There are also a checkout page...Which is helps you to Get a premium member.
+- Six Tourist Countries are added... I will add many Beautiful Countries to the website
+- There are secure authentication system by Firebase. Google and Email this two system are added for secure authentication.
+- There are also many types of blogs. Which helps to know about many things.
+- There is also a checkout page. Which helps you to Get a premium membership.
 - You can give your review here
 - You can also delete and edit your review.
 
