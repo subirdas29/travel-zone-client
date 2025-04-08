@@ -19,7 +19,7 @@ https://travel-zone-fbd7e.web.app
 
 ## Feature
 - Firebase Authentication.
-- React-Router-Dom
+- React
 - React-Router-Dom
 - React-Icons.
 - Express.js
